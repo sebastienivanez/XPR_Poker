@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+#include <cstdlib>
 
 using namespace std;
 void print_tab(string tab[],int nbr);
@@ -40,7 +41,7 @@ void init_jetons()
 				{"noir",	"500"}};
 	
 	
-	for(int i=0; i<nb_coins; i++)
+	for(int i=0; i<5; i++)
 	{
 		cout	<<"Value of coin "<<jetons[i][0]<<": ";
 		cin	>>jetons[i][1];
@@ -98,7 +99,7 @@ void print_tab(string tab[],int nbr)
 	}
 }
 
-void print_tab2(string tab2d[5][2])
+void print_tab2d(string tab2d[5][2])
 {
 	cout	<<"Coins :"<<endl;
 	

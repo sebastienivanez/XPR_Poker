@@ -1,8 +1,8 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
-#include "common.h"
-#include "cards.h"
+#include "../inc/common.h"
+#include "../inc/cards.h"
 
 void Pre_Flop(int *card1, int *card2);
 int *Flop(int *card1, int *card2);
