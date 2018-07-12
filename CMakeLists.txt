@@ -7,4 +7,4 @@ include_directories(${PROJECT_SRC_DIR}/inc)
 
 # Set the target name and source
 #add_executable(MyProject src/xpr_proba.cpp)
-add_executable(XPR_Poker src/xpr_poker.cpp)
+add_executable(XPR_Poker src/main.cpp)
