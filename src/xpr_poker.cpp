@@ -1,37 +1,69 @@
+/*! \file
+ * Main entry point for xpr_poker.
+ * This file contains main().
+ */
+
+/* INCLUDES */
 #include <iostream>
 #include <iomanip>
 #include <sstream>
 #include <cstdlib>
 
-using namespace std;
-void print_tab(string tab[],int nbr);
-void print_tab2d(string tab2d[5][2]);
-void init_jetons();
-void split_coins(string tab2d[5][2], int stack);
-inline int string2int(const string i);
+/* MACROS */
+#define MAX_NB_PLAYER 9 // Remove variable lenght array.
 
+/*! \namespace std */
+using namespace std;
+void initJetons();
+void initPlayers();
+void splitCoins(string tab2d[5][2], int stack);
+void printTab(string tab[],int nbr);
+void printTab2D(string tab2d[5][2]);
+inline string int2String(const int i);
+inline int string2Int(const string i);
+
+/*!
+ * \details Entry function to XPR_Poker.
+ * \author  Sebastien Ivanez
+ * \date    12/07/2018
+ */
 int main(void)
 {
+
+	initPlayers();
+	//printTab(player, nb_player);
+	initJetons();
+	return 0;
+}
+
+/*!
+ * \details Initializes the players informations
+ * \author  Sebastien Ivanez
+ * \date    12/07/2018
+ */
+void initPlayers()
+{
 	int nb_player;
-	cout	<<"how many players ? ";
-	cin	>>nb_player;
-	string player[nb_player];
+	string player[MAX_NB_PLAYER];
+
+	cout << "how many players ? ";
+	cin	>> nb_player;
 	
-	for(int i=0; i<nb_player; i++)
+	for(int i = 0; i < nb_player; i++)
 	{
 		cout	<<"player n°"<<i+1<<": ";
 		cin 	>>player[i];
 	}
-	//print_tab(player, nb_player);
-	init_jetons();
-	return 0;
 }
 
-void init_jetons()
+/*!
+ * \details TODO
+ * \author  Sebastien Ivanez
+ * \date    12/07/2018
+ */
+void initJetons()
 {
 	int stack;
-	char *b;
-	int bl;							
 	cout	<<"Begin stack: ";
 	cin	>>stack;
 	string jetons[5][2] = 	{{"blanc",	"10"},
@@ -47,12 +79,17 @@ void init_jetons()
 		cin	>>jetons[i][1];
 	}
 	
-	print_tab2d(jetons);
-	split_coins(jetons, stack);
+	printTab2D(jetons);
+	splitCoins(jetons, stack);
 	
 }
 
-void split_coins(string tab2d[5][2], int stack)
+/*!
+ * \details TODO
+ * \author  Sebastien Ivanez
+ * \date    12/07/2018
+ */
+void splitCoins(string tab2d[5][2], int stack)
 {
 	int nb_noir;
 	int val_noir;
@@ -65,11 +102,11 @@ void split_coins(string tab2d[5][2], int stack)
 	int nb_blanc;
 	int val_blanc;
 	
-	val_noir = string2int(tab2d[4][1]);
-	val_vert = string2int(tab2d[3][1]);
-	val_bleu = string2int(tab2d[2][1]);
-	val_rouge = string2int(tab2d[1][1]);
-	val_blanc = string2int(tab2d[0][1]);
+	val_noir = string2Int(tab2d[4][1]);
+	val_vert = string2Int(tab2d[3][1]);
+	val_bleu = string2Int(tab2d[2][1]);
+	val_rouge = string2Int(tab2d[1][1]);
+	val_blanc = string2Int(tab2d[0][1]);
 	
 	nb_noir = (stack/(2*val_noir));
 	stack = (stack - nb_noir*val_noir);
@@ -89,7 +126,12 @@ void split_coins(string tab2d[5][2], int stack)
 	cout	<<"jetons "<<setw(7)<<tab2d[0][0]<<": "<<setw(5)<<nb_blanc<<endl;
 }
 
-void print_tab(string tab[],int nbr)
+/*!
+ * \details TODO
+ * \author  Sebastien Ivanez
+ * \date    12/07/2018
+ */
+void printTab(string tab[],int nbr)
 {
 	cout	<<"Players :"<<endl;
 	
@@ -99,7 +141,12 @@ void print_tab(string tab[],int nbr)
 	}
 }
 
-void print_tab2d(string tab2d[5][2])
+/*!
+ * \details TODO
+ * \author  Sebastien Ivanez
+ * \date    12/07/2018
+ */
+void printTab2D(string tab2d[5][2])
 {
 	cout	<<"Coins :"<<endl;
 	
@@ -108,38 +155,27 @@ void print_tab2d(string tab2d[5][2])
 		cout	<<setw(17)<<tab2d[i][0]<<setw(10)<<tab2d[i][1]<<endl;
 	}
 }
-// -- Function: int2string
-// -- Purpose:  Convert an INT into a STRING
-inline string int2string(const int i)
+
+/*!
+ * \details Converts an INT into a STRING.
+ * \author  Sebastien Ivanez
+ * \date    12/07/2018
+ */
+inline string int2String(const int i)
 {
 	stringstream ss;
 	ss << i;
 	return ss.str();
 }
 
-// -- Function: string2int
-// -- Purpose:  Convert an STRING into a INT
-inline int string2int(const string i)
+/*!
+ * \details Converts an STRING into an INT.
+ * \author  Sebastien Ivanez
+ * \date    12/07/2018
+ */
+inline int string2Int(const string i)
 {
-	char *ci;
 	int ii;
 	ii = atoi((char*)i.c_str());
     	return ii;
 }
-
-/*string *init_player()
-{
-	unsigned int nbr_player;
-	string player_name[30];
-
-	cout	<<"how many players ?"<<endl;
-	cin	>>nbr_player;
-	
-	for(int i = 0; i < nbr_player; i++)
-	{
-		cout	<<"player n°"<<i+1<<" what is your name ?"<<endl;
-		cin 	>>player_name[i];
-	}
-
-	return &player_name[0];
-}*/
