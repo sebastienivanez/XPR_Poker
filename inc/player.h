@@ -1,7 +1,6 @@
 /*! \file
  * Description
  */
-
 #ifndef _PLAYER_H
 #define _PLAYER_H
 
@@ -22,12 +21,18 @@ class Player {
   string name;
 
   public:
+    // Constructors
     Player() {this->name = "tbd"; this->stack = 0;}
     Player(string, int);
+
+    // Set/Get methods
     int getStack() {return stack;}
     string getName() {return name;}
     void setStack(int stack) {this->stack = stack;}
     void setName(string name) {this->name = name;}
+
+    // Other methods
+    void getCards();
 };
 
 #endif

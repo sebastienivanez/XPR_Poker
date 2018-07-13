@@ -12,7 +12,7 @@
 using namespace std;
 
 /*!
- * \details TODO
+ * \details Easy way to split coins. Should be improved.
  * \author  Sebastien Ivanez
  * \date    12/07/2018
  */
