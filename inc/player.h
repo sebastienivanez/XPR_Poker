@@ -5,11 +5,9 @@
 #define _PLAYER_H
 
 /* INCLUDES */
+#include <vector>
 
 /* MACROS */
-
-/*! \namespace std */
-using namespace std;
 
 /*!
  * \details Player class
@@ -18,21 +16,24 @@ using namespace std;
  */
 class Player {
   int stack;
-  string name;
+  std::string name;
+  std::vector<std::string> hand; // A hand contains 2 cards
 
   public:
     // Constructors
     Player() {this->name = "tbd"; this->stack = 0;}
-    Player(string, int);
+    Player(std::string name, int stack) {this->name = name; this->stack = stack;}
 
     // Set/Get methods
     int getStack() {return stack;}
-    string getName() {return name;}
+    std::string getName() {return name;}
     void setStack(int stack) {this->stack = stack;}
-    void setName(string name) {this->name = name;}
+    void setName(std::string name) {this->name = name;}
+    std::vector<std::string> getHand();
 
     // Other methods
-    void getCards();
+    std::vector<std::string> dealCards(std::vector<std::string> deck);
+    void printHand();
 };
 
 #endif

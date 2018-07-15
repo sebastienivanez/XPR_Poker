@@ -8,8 +8,11 @@
 #include <iomanip>
 #include <sstream>
 #include <cstdlib>
+#include <vector>
 #include "../inc/common.h"
 #include "../inc/player.h"
+#include "../inc/cards.h"
+#include "player.cpp"
 #include "game_handler.cpp"
 
 /* MACROS */
@@ -25,8 +28,16 @@ using namespace std;
  */
 int main(void)//int argc, char *argv[])
 {
-  Player player[MAX_NB_PLAYER];
-  initGame(player);
+  //Player player[MAX_NB_PLAYER];
+  //initGame(player);
+
+  Player seb("seb", 200);
+  vector<string> deck;
+
+  deck = shuffle(deck);
+  deck = seb.dealCards(deck);
+
+  seb.printHand();
 
   return 0;
 }
