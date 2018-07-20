@@ -17,9 +17,9 @@ using namespace std;
  * \author  Sebastien Ivanez
  * \date    12/07/2018
  */
-void initGame(Player *player)
+int initGame(Player *player)
 {
-  int nb_player = 0;
+  int nb_players = 0;
   int initial_stack = 0;
   int stack = 0;
   string coins[5][2] = {{"blanc", "1"}, {"rouge", "5"}, {"bleu", "10"}, {"vert", "50"}, {"noir", "250"}};
@@ -28,9 +28,9 @@ void initGame(Player *player)
   cout << "Begin stack: ";
   cin	>> stack;
   cout << "how many players ? ";
-  cin	>> nb_player;
+  cin	>> nb_players;
 
-  for(int i = 0; i < nb_player; i++)
+  for(int i = 0; i < nb_players; i++)
   {
     cout << "player n°" << i+1 << ": ";
     cin >> player_name;
@@ -45,4 +45,5 @@ void initGame(Player *player)
   }
 
   splitCoins(coins, stack);
+  return nb_players;
 }

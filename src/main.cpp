@@ -11,7 +11,7 @@
 #include <vector>
 #include "../inc/common.h"
 #include "../inc/player.h"
-#include "../inc/cards.h"
+#include "../inc/deck.h"
 #include "player.cpp"
 #include "game_handler.cpp"
 
@@ -28,16 +28,19 @@ using namespace std;
  */
 int main(void)//int argc, char *argv[])
 {
-  //Player player[MAX_NB_PLAYER];
-  //initGame(player);
+  Player player[MAX_NB_PLAYER];
+  int nb_players = 0;
 
-  Player seb("seb", 200);
-  vector<string> deck;
+  nb_players = initGame(player);
 
-  deck = shuffle(deck);
-  deck = seb.dealCards(deck);
+  if (nb_players == 0)
+    return 0; // Log no players
 
-  seb.printHand();
+  //Player seb("seb", 200);
+
+  //deck = seb.dealCards(deck);
+
+  //seb.printHand();
 
   return 0;
 }

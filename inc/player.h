@@ -34,6 +34,7 @@ class Player {
     // Other methods
     std::vector<std::string> dealCards(std::vector<std::string> deck);
     void printHand();
+    void printEquity();
 };
 
 #endif
