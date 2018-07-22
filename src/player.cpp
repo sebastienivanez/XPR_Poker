@@ -43,7 +43,7 @@ void Player::printHand()
  */
 void Player::printEquity()
 {
-/*  static const int pre_flop_equity[14][14] =
+  /*static const int pre_flop_equity[14][14] =
   // A   K   Q   J   T   9   8   7   6   5   4   3   2
   {{85, 67, 66, 65, 65, 63, 62, 61, 60, 60, 59, 58, 57},// A
    {65, 82, 63, 62, 62, 60, 58, 58, 57, 56, 55, 54, 53},// K
@@ -59,4 +59,24 @@ void Player::printEquity()
    {56, 51, 48, 45, 43, 40, 37, 37, 36, 36, 35, 54, 36},// 3
    {55, 51, 47, 44, 42, 39, 37, 35, 34, 34, 33, 32, 50} // 2
   };*/
+  char str[2];
+
+  strcpy(str, this->hand.at(0).c_str());
+
+  switch(str[1]) {
+    case 'h':
+      cout << "Heart" << endl;
+      break;
+    case 'd':
+      cout << "Diamond" << endl;
+      break;
+    case 'c':
+      cout << "Club" << endl;
+      break;
+    case 's':
+      cout << "Spade" << endl;
+      break;
+    default:
+    break;
+  }
 }

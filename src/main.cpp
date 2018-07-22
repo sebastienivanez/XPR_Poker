@@ -41,14 +41,12 @@ int main(void)//int argc, char *argv[])
 
 */
   Player seb("seb", 200);
-  Player gui("seb", 200);
   Deck deck;
 
   deck.shuffle();
   deck = seb.dealCards(deck);
-  deck = gui.dealCards(deck);
   seb.printHand();
-  gui.printHand();
+  seb.printEquity();
 
   return 0;
 }

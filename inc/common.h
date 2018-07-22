@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <sstream>
 #include <cstdlib>
+#include <cstring> // To use strcpy()
 
 /* MACROS */
 
@@ -43,6 +44,18 @@ inline std::string int2String(const int i)
 inline int string2Int(const std::string s)
 {
   return atoi((char*)s.c_str());
+}
+
+/*!
+ * \details Converts an STRING into an CHAR.
+ * \author  Sebastien Ivanez
+ * \date    22/07/2018
+ */
+inline char* string2Char(const std::string s)
+{
+  char* c;
+  strcpy(c, s.c_str());
+  return c;
 }
 
 #endif
