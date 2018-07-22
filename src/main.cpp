@@ -4,16 +4,17 @@
  */
 
 /* INCLUDES */
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 #include <sstream>
 #include <cstdlib>
 #include <vector>
 #include "../inc/common.h"
-#include "../inc/player.h"
 #include "../inc/deck.h"
-#include "player.cpp"
+#include "../inc/player.h"
+#include "deck.cpp"
 #include "game_handler.cpp"
+#include "player.cpp"
 
 /* MACROS */
 #define MAX_NB_PLAYER 9 // Remove variable lenght array.
@@ -28,7 +29,9 @@ using namespace std;
  */
 int main(void)//int argc, char *argv[])
 {
+/*
   Player player[MAX_NB_PLAYER];
+  Player seb("seb", 200);
   int nb_players = 0;
 
   nb_players = initGame(player);
@@ -36,11 +39,16 @@ int main(void)//int argc, char *argv[])
   if (nb_players == 0)
     return 0; // Log no players
 
-  //Player seb("seb", 200);
+*/
+  Player seb("seb", 200);
+  Player gui("seb", 200);
+  Deck deck;
 
-  //deck = seb.dealCards(deck);
-
-  //seb.printHand();
+  deck.shuffle();
+  deck = seb.dealCards(deck);
+  deck = gui.dealCards(deck);
+  seb.printHand();
+  gui.printHand();
 
   return 0;
 }

@@ -6,9 +6,9 @@
 #define _DECK_H
 
 /* INCLUDES */
+#include <vector>
 
 /* MACROS */
-#define MAX_NB_CARDS 52
 
 /*!
  * \details TODO
@@ -17,9 +17,10 @@
  */
 class Deck
 {
-  std::vector<std::string> cards;
 
   public:
+    std::vector<std::string> cards;
+
     // Constructors
     Deck();
 

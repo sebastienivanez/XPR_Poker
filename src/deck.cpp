@@ -3,6 +3,9 @@
  */
 
 /* INCLUDES */
+#include <algorithm>
+#include <chrono>
+#include <ctime>
 #include "../inc/deck.h"
 
 /* MACROS */
@@ -22,7 +25,7 @@ Deck::Deck()
     "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "tc", "jc", "qc", "kc", "ac" // Clubs
   };
 
-  deck.assign(all_cards, all_cards + MAX_NB_CARDS);
+  this->cards.assign(all_cards, all_cards + MAX_NB_CARDS);
 }
 
 /*!
@@ -33,7 +36,5 @@ Deck::Deck()
 void Deck::shuffle()
 {
   unsigned seed = std::chrono::system_clock::now().time_since_epoch().count(); // Obtain a time-based seed
-  shuffle(this->deck.begin(), deck.end(), std::default_random_engine(seed)); // Randomly rearrange elements in range using generator
+  std::shuffle(this->cards.begin(), this->cards.end(), std::default_random_engine(seed)); // Randomly rearrange elements in range using generator
 }
-
-#endif

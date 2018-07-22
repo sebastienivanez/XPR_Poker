@@ -15,11 +15,11 @@ using namespace std;
  * \author  Sebastien Ivanez
  * \date    15/07/2018
  */
-vector<string> Player::dealCards(vector<string> deck)
+Deck Player::dealCards(Deck deck)
 { 
   for (int i = 0; i < 2; i++) {
-    this->hand.push_back(deck.back()); // Deal last card of deck to player
-    deck.pop_back(); // Remove last card of the deck
+    this->hand.push_back(deck.cards.back()); // Deal last card of deck to player
+    deck.cards.pop_back(); // Remove last card of the deck
   }
   
   return deck;

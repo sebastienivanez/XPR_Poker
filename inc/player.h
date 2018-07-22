@@ -32,7 +32,7 @@ class Player {
     std::vector<std::string> getHand();
 
     // Other methods
-    std::vector<std::string> dealCards(std::vector<std::string> deck);
+    Deck dealCards(Deck deck);
     void printHand();
     void printEquity();
 };
