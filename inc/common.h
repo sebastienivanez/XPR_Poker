@@ -19,7 +19,7 @@
  * \author  Sebastien Ivanez
  * \date    12/07/2018
  */
-void clearScreen()
+inline void clearScreen()
 {
   system("clear");
 }
@@ -53,8 +53,8 @@ inline int string2Int(const std::string s)
  */
 inline char* string2Char(const std::string s)
 {
-  char* c;
-  strcpy(c, s.c_str());
+  char* c = new char();
+  std::strcpy(c, s.c_str());
   return c;
 }
 

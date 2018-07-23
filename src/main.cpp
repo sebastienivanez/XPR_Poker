@@ -10,6 +10,7 @@
 #include <cstdlib>
 #include <vector>
 #include "../inc/common.h"
+#include "../inc/common_poker.h"
 #include "../inc/deck.h"
 #include "../inc/player.h"
 #include "deck.cpp"
