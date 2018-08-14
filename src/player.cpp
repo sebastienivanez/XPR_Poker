@@ -43,7 +43,7 @@ void Player::printHand()
  */
 void Player::printEquity()
 {
-  static const int pre_flop_equity[14][14] =
+  static const int pre_flop_equity[14][14] = // Those values are valid if only 2 players
   // A   K   Q   J   T   9   8   7   6   5   4   3   2
   {{85, 67, 66, 65, 65, 63, 62, 61, 60, 60, 59, 58, 57},// A
    {65, 82, 63, 62, 62, 60, 58, 58, 57, 56, 55, 54, 53},// K

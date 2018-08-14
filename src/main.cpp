@@ -11,8 +11,6 @@
 #include <vector>
 #include "../inc/common.h"
 #include "../inc/common_poker.h"
-#include "../inc/deck.h"
-#include "../inc/player.h"
 #include "deck.cpp"
 #include "game_handler.cpp"
 #include "player.cpp"
@@ -42,12 +40,16 @@ int main(void)//int argc, char *argv[])
 
 */
   Player seb("seb", 200);
+  Player gui("gui", 200);
   Deck deck;
 
   deck.shuffle();
   deck = seb.dealCards(deck);
+  deck = gui.dealCards(deck);
   seb.printHand();
   seb.printEquity();
+  gui.printHand();
+  gui.printEquity();
 
   return 0;
 }
