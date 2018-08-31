@@ -3,7 +3,10 @@
  */
  
 /* INCLUDES */
-#include "../inc/player.h"
+#include <iostream> // To call cout/cin
+#include "../inc/common.hpp"
+#include "../inc/common_poker.hpp"
+#include "../inc/player.hpp"
 
 /* MACROS */
 

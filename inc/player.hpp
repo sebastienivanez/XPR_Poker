@@ -5,7 +5,8 @@
 #define _PLAYER_H
 
 /* INCLUDES */
-#include <vector>
+#include <vector> // To use vector
+#include "deck.hpp"
 
 /* MACROS */
 

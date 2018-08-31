@@ -5,8 +5,7 @@
 /* INCLUDES */
 #include <algorithm>
 #include <chrono>
-#include <ctime>
-#include "../inc/deck.h"
+#include "../inc/deck.hpp"
 
 /* MACROS */
 #define MAX_NB_CARDS 52

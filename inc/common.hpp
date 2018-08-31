@@ -6,10 +6,7 @@
 #define _COMMON_H
 
 /* INCLUDES */
-#include <iostream>
-#include <iomanip>
 #include <sstream>
-#include <cstdlib>
 #include <cstring> // To use strcpy()
 
 /* MACROS */

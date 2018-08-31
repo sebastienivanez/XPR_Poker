@@ -6,7 +6,8 @@
 #define _DECK_H
 
 /* INCLUDES */
-#include <vector>
+#include <string> // To use vector
+#include <vector> // To use vector
 
 /* MACROS */
 
